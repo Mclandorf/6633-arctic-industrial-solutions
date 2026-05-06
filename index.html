@@ -19,8 +19,15 @@
       --line: rgba(255,255,255,0.14);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -30,7 +37,10 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
       width: min(1380px, 92%);
@@ -76,7 +86,7 @@
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 26px;
     }
 
     .nav-links {
@@ -87,7 +97,9 @@
       color: #e7edf7;
     }
 
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover {
+      color: var(--gold);
+    }
 
     .lang-switch {
       display: flex;
@@ -120,8 +132,8 @@
       padding-top: 76px;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(3,9,22,0.24) 0%, rgba(3,9,22,0.07) 48%, rgba(3,9,22,0.14) 100%),
-        linear-gradient(180deg, rgba(3,9,22,0.06) 0%, rgba(3,9,22,0.16) 50%, rgba(3,9,22,0.78) 100%),
+        linear-gradient(90deg, rgba(3,9,22,0.18) 0%, rgba(3,9,22,0.06) 48%, rgba(3,9,22,0.12) 100%),
+        linear-gradient(180deg, rgba(3,9,22,0.05) 0%, rgba(3,9,22,0.10) 48%, rgba(3,9,22,0.70) 100%),
         url("hero-refinery.png") center center / cover no-repeat,
         url("hero-rafinery.png") center center / cover no-repeat;
     }
@@ -130,18 +142,18 @@
       min-height: calc(100vh - 76px);
       position: relative;
       display: grid;
-      grid-template-columns: minmax(560px, 660px) minmax(420px, 520px);
-      gap: clamp(80px, 9vw, 150px);
+      grid-template-columns: minmax(520px, 650px) minmax(420px, 520px);
+      gap: clamp(70px, 8vw, 140px);
       align-items: end;
       justify-content: space-between;
-      padding: 54px 0 72px;
+      padding: 46px 0 72px;
     }
 
     .hero-logo {
       position: absolute;
-      top: 26px;
+      top: 34px;
       left: 0;
-      width: min(35vw, 520px);
+      width: min(34vw, 520px);
       z-index: 2;
       filter: drop-shadow(0 22px 44px rgba(0,0,0,0.82));
     }
@@ -149,8 +161,8 @@
     .hero-left {
       position: relative;
       z-index: 3;
-      padding-top: 335px;
-      max-width: 660px;
+      padding-top: 330px;
+      max-width: 650px;
     }
 
     .badge {
@@ -166,32 +178,48 @@
     }
 
     .hero-title {
-      max-width: 660px;
-      font-size: clamp(46px, 4.15vw, 66px);
+      max-width: 650px;
+      font-size: clamp(46px, 4.05vw, 66px);
       line-height: 1.06;
       letter-spacing: -1.4px;
       font-weight: 900;
-      text-shadow: 0 10px 34px rgba(0,0,0,0.90);
+      text-shadow: 0 10px 34px rgba(0,0,0,0.92);
       margin-bottom: 28px;
       color: var(--white);
     }
 
     .hero-title .line {
       display: block;
-      white-space: nowrap;
     }
 
     .hero-title .highlight {
       display: block;
       color: var(--gold);
+    }
+
+    html[lang="en"] .hero-title .line,
+    html[lang="en"] .hero-title .highlight,
+    html[lang="no"] .hero-title .line,
+    html[lang="no"] .hero-title .highlight {
       white-space: nowrap;
+    }
+
+    html[lang="pl"] .hero-title {
+      font-size: clamp(42px, 3.45vw, 58px);
+      max-width: 710px;
+      line-height: 1.08;
+    }
+
+    html[lang="pl"] .hero-title .line,
+    html[lang="pl"] .hero-title .highlight {
+      white-space: normal;
     }
 
     .hero-copy {
       max-width: 610px;
       font-size: 18px;
       color: #edf3fc;
-      text-shadow: 0 7px 24px rgba(0,0,0,0.88);
+      text-shadow: 0 7px 24px rgba(0,0,0,0.90);
       margin-bottom: 30px;
     }
 
@@ -209,7 +237,9 @@
       transition: transform .2s ease;
     }
 
-    .btn:hover { transform: translateY(-2px); }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
     .btn-primary {
       background: var(--gold);
@@ -226,8 +256,10 @@
       position: relative;
       z-index: 3;
       align-self: end;
+      justify-self: end;
       margin-bottom: 34px;
-      background: rgba(8, 22, 45, 0.79);
+      width: min(100%, 520px);
+      background: rgba(8, 22, 45, 0.80);
       backdrop-filter: blur(15px);
       border: 1px solid rgba(255,255,255,0.14);
       border-radius: 28px;
@@ -241,7 +273,9 @@
       margin-bottom: 22px;
     }
 
-    .competence-card ul { list-style: none; }
+    .competence-card ul {
+      list-style: none;
+    }
 
     .competence-card li {
       padding: 14px 0;
@@ -250,9 +284,13 @@
       font-size: 18px;
     }
 
-    .competence-card li:last-child { border-bottom: none; }
+    .competence-card li:last-child {
+      border-bottom: none;
+    }
 
-    section { padding: 90px 0; }
+    section {
+      padding: 90px 0;
+    }
 
     .section-title {
       font-size: clamp(36px, 4vw, 54px);
@@ -366,7 +404,9 @@
       box-shadow: 0 25px 60px rgba(0,0,0,0.22);
     }
 
-    .contact-list { list-style: none; }
+    .contact-list {
+      list-style: none;
+    }
 
     .contact-list li {
       padding: 11px 0;
@@ -374,7 +414,9 @@
       border-bottom: 1px solid rgba(255,255,255,0.10);
     }
 
-    .contact-list a { color: var(--white); }
+    .contact-list a {
+      color: var(--white);
+    }
 
     footer {
       border-top: 1px solid var(--line);
@@ -399,14 +441,19 @@
         display: block;
       }
 
-      .hero-left { padding-top: 0; }
+      .hero-left {
+        padding-top: 0;
+      }
 
       .hero-title .line,
       .hero-title .highlight {
-        white-space: normal;
+        white-space: normal !important;
       }
 
-      .competence-card { margin-bottom: 0; }
+      .competence-card {
+        margin-bottom: 0;
+        justify-self: start;
+      }
 
       .grid,
       .grid.two,
@@ -417,15 +464,28 @@
     }
 
     @media (max-width: 920px) {
-      .nav-links { display: none; }
+      .nav-links {
+        display: none;
+      }
     }
 
     @media (max-width: 600px) {
-      .container { width: 90%; }
+      .container {
+        width: 90%;
+      }
 
-      nav { height: 68px; }
-      .brand img { width: 42px; height: 42px; }
-      .brand span { font-size: 10px; }
+      nav {
+        height: 68px;
+      }
+
+      .brand img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand span {
+        font-size: 10px;
+      }
 
       .lang-switch button {
         padding: 6px 8px;
@@ -442,19 +502,30 @@
         padding: 34px 0 58px;
       }
 
-      .hero-logo { width: 100%; }
+      .hero-logo {
+        width: 100%;
+      }
 
       .hero-title {
-        font-size: 42px;
+        font-size: 42px !important;
         line-height: 1.08;
       }
 
-      .hero-copy { font-size: 17px; }
+      .hero-copy {
+        font-size: 17px;
+      }
 
-      .competence-card { padding: 24px; }
-      .competence-card li { font-size: 16px; }
+      .competence-card {
+        padding: 24px;
+      }
 
-      section { padding: 62px 0; }
+      .competence-card li {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 62px 0;
+      }
     }
   </style>
 </head>
@@ -793,6 +864,7 @@
 
     function setLang(lang) {
       document.documentElement.lang = lang === "no" ? "no" : lang;
+
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         if (translations[lang] && translations[lang][key]) {
