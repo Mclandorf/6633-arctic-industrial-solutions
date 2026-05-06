@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>66°33' Arctic Industrial Solutions | Piping • Prefabrication • Pressure Testing</title>
+  <meta name="description" content="Usługi industrialne: prefabrykacja rurociągów, nadzór montażu, pressure testing, flange work, koordynacja prac przemysłowych w Norwegii i Europie." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg2: #0d1b2f;
+      --card: #11243d;
+      --accent: #f4b41a;
+      --accent2: #48cae4;
+      --text: #f4f7fb;
+      --muted: #b8c4d6;
+      --line: rgba(255,255,255,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, var(--bg), var(--bg2));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 92%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(7,17,31,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      padding: 110px 0 80px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent2);
+      margin-bottom: 22px;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 34px;
+    }
+
+    .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn {
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #08111e;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .hero-card {
+      background: rgba(17,36,61,0.75);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    }
+
+    .hero-card h3 { color: var(--accent); margin-bottom: 16px; }
+    .hero-card ul { list-style: none; }
+    .hero-card li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .hero-card li:last-child { border-bottom: none; }
+
+    section { padding: 76px 0; }
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+    .section-lead {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(17,36,61,0.72);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .card p, .card li { color: var(--muted); }
+    .card ul { padding-left: 18px; }
+
+    .about {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      color: var(--accent2);
+    }
+
+    .languages {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(244,180,26,0.16), rgba(72,202,228,0.12));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .contact-box p { color: var(--muted); }
+    .contact-list { list-style: none; }
+    .contact-list li {
+      padding: 10px 0;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 850px) {
+      .hero, .about, .contact-box { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      section { padding: 54px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">66°33' ARCTIC INDUSTRIAL SOLUTIONS</div>
+        <div class="nav-links">
+          <a href="#services">Usługi</a>
+          <a href="#about">O mnie</a>
+          <a href="#experience">Doświadczenie</a>
+          <a href="#contact">Kontakt</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div>
+        <div class="badge">Norway • Poland • Europe</div>
+        <h1>Industrial supervision, <span>piping</span> & pressure testing.</h1>
+        <p>
+          Profesjonalne wsparcie dla projektów przemysłowych: prefabrykacja rurociągów, nadzór montażu, koordynacja brygad, próby ciśnieniowe oraz prace kołnierzowe.
+        </p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#contact">Skontaktuj się</a>
+          <a class="btn btn-secondary" href="#services">Zobacz usługi</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Zakres kompetencji</h3>
+        <ul>
+          <li>Pipeline Prefabrication Foreman</li>
+          <li>Piping assembly supervision</li>
+          <li>Pressure testing coordination</li>
+          <li>Flange work / bolted connections</li>
+          <li>Industrial project support</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="services" class="container">
+      <h2 class="section-title">Usługi</h2>
+      <p class="section-lead">
+        Pomagam firmom przemysłowym w organizacji, kontroli i realizacji prac technicznych na projektach offshore, onshore, stoczniowych i instalacyjnych.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Prefabrykacja rurociągów</h3>
+          <p>Nadzór nad prefabrykacją, kontrola jakości wykonania, organizacja pracy zespołów oraz wsparcie dokumentacji technicznej.</p>
+        </div>
+        <div class="card">
+          <h3>Montaż i koordynacja</h3>
+          <p>Prowadzenie brygad, planowanie zadań, kontrola postępu, rozwiązywanie problemów na budowie oraz współpraca z klientem.</p>
+        </div>
+        <div class="card">
+          <h3>Pressure testing</h3>
+          <p>Przygotowanie, koordynacja i nadzór nad próbami ciśnieniowymi oraz wsparcie przy pakietach testowych.</p>
+        </div>
+        <div class="card">
+          <h3>Flange work</h3>
+          <p>Wsparcie przy połączeniach kołnierzowych, procedurach dokręcania, kontroli przygotowania i standardach bezpieczeństwa.</p>
+        </div>
+        <div class="card">
+          <h3>Consulting techniczny</h3>
+          <p>Doradztwo dla firm wykonawczych, ocena organizacji prac, wsparcie rekrutacyjne i techniczna weryfikacja personelu.</p>
+        </div>
+        <div class="card">
+          <h3>Multi-language support</h3>
+          <p>Komunikacja z zespołami po polsku, angielsku, norwesku i rosyjsku na projektach międzynarodowych.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <div>
+        <h2 class="section-title">O firmie</h2>
+        <p class="section-lead">
+          66°33' Arctic Industrial Solutions to niezależne wsparcie techniczne dla przemysłu inspirowane północą, doświadczeniem zdobytym w Norwegii oraz profesjonalnym podejściem do projektów przemysłowych. Łączę praktyczne doświadczenie z placu budowy z umiejętnością prowadzenia ludzi, komunikacji z klientem i kontroli jakości.
+        </p>
+        <div class="languages">
+          <span class="pill">Polski</span>
+          <span class="pill">English</span>
+          <span class="pill">Norsk</span>
+          <span class="pill">Русский</span>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>20+</strong>
+          lat doświadczenia technicznego
+        </div>
+        <div class="stat">
+          <strong>EU/NO</strong>
+          projekty w Europie i Norwegii
+        </div>
+        <div class="stat">
+          <strong>HSE</strong>
+          bezpieczna organizacja pracy
+        </div>
+        <div class="stat">
+          <strong>4</strong>
+          języki komunikacji
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="container">
+      <h2 class="section-title">Doświadczenie projektowe</h2>
+      <p class="section-lead">
+        Praktyczne doświadczenie w prefabrykacji i montażu instalacji przemysłowych, pracy z dokumentacją techniczną, prowadzeniu zespołów oraz współpracy z klientami na dużych projektach.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Oil & Gas / Energy</h3>
+          <ul>
+            <li>rurociągi procesowe</li>
+            <li>prefabrykacja i montaż</li>
+            <li>testy i odbiory</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Industrial construction</h3>
+          <ul>
+            <li>koordynacja brygad</li>
+            <li>kontrola jakości</li>
+            <li>planowanie prac</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Client support</h3>
+          <ul>
+            <li>raportowanie postępu</li>
+            <li>rozwiązywanie problemów</li>
+            <li>komunikacja między zespołami</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <div class="contact-box">
+        <div>
+          <h2 class="section-title">Kontakt</h2>
+          <p>
+            Szukasz doświadczonego foremana, koordynatora lub konsultanta technicznego do projektu przemysłowego? Napisz lub zadzwoń.
+          </p>
+        </div>
+        <div>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> kontakt@twojadomena.com</li>
+            <li><strong>Telefon:</strong> +47 XXX XX XXX</li>
+            <li><strong>Lokalizacja:</strong> Norway / EU projects</li>
+            <li><strong>LinkedIn:</strong> linkedin.com/in/twoj-profil</li>
+          </ul>
+          <div class="buttons" style="margin-top: 18px;">
+            <a class="btn btn-primary" href="mailto:kontakt@twojadomena.com">Wyślij email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 66°33' Arctic Industrial Solutions. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
