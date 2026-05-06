@@ -3,42 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>66°33' Arctic Industrial Solutions | Piping • Prefabrication • Pressure Testing</title>
-  <meta name="description" content="Usługi industrialne: prefabrykacja rurociągów, nadzór montażu, pressure testing, flange work, koordynacja prac przemysłowych w Norwegii i Europie." />
+  <title>66°33' Arctic Industrial Solutions | Piping • Steel Structures • Pressure Testing</title>
+  <meta name="description" content="66°33' Arctic Industrial Solutions - industrial supervision, piping, steel structures, pressure testing, flange work and pre-assembly management for demanding industrial projects in Norway, Sweden, Finland, Europe and Armenia." />
   <style>
     :root {
       --bg: #07111f;
       --bg2: #0d1b2f;
-      --card: #11243d;
+      --card: rgba(17, 36, 61, 0.78);
       --accent: #f4b41a;
       --accent2: #48cae4;
       --text: #f4f7fb;
-      --muted: #b8c4d6;
-      --line: rgba(255,255,255,0.12);
+      --muted: #c3cfdf;
+      --line: rgba(255,255,255,0.14);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background:
-        linear-gradient(135deg, rgba(7,17,31,0.96), rgba(13,27,47,0.98)),
-        radial-gradient(circle at top right, rgba(72,202,228,0.15), transparent 35%),
-        radial-gradient(circle at bottom left, rgba(244,180,26,0.10), transparent 28%),
-        linear-gradient(135deg, var(--bg), var(--bg2));
+      background: linear-gradient(135deg, var(--bg), var(--bg2));
       color: var(--text);
       line-height: 1.6;
     }
 
     a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, 92%); margin: auto; }
+    .container { width: min(1200px, 92%); margin: auto; }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 50;
       background: rgba(7,17,31,0.92);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
 
@@ -46,13 +42,25 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
+      padding: 14px 0;
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-weight: 800;
       letter-spacing: 0.5px;
       color: var(--accent);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .logo img {
+      height: 46px;
+      width: auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
 
     .nav-links {
@@ -64,37 +72,70 @@
 
     .nav-links a:hover { color: var(--accent); }
 
+    .hero-wrap {
+      width: min(1600px, 100%);
+      margin: 0 auto;
+      min-height: 920px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(4,10,18,0.34) 0%, rgba(4,10,18,0.18) 46%, rgba(4,10,18,0.20) 100%),
+        linear-gradient(180deg, rgba(4,10,18,0.10) 0%, rgba(4,10,18,0.22) 55%, rgba(4,10,18,0.70) 100%),
+        url('hero-refinery.png') center/cover no-repeat;
+      border-bottom: 1px solid var(--line);
+    }
+
     .hero {
-      padding: 110px 0 80px;
+      min-height: 920px;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 48px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 44px;
       align-items: center;
+      padding: 70px 0 90px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-left {
+      padding-top: 20px;
+    }
+
+    .hero-logo {
+      width: min(48vw, 560px);
+      max-width: 560px;
+      display: block;
+      margin: 0 0 120px 0;
+      filter: drop-shadow(0 28px 55px rgba(0,0,0,0.80));
     }
 
     .badge {
       display: inline-block;
       padding: 8px 14px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(72,202,228,0.36);
       border-radius: 999px;
       color: var(--accent2);
       margin-bottom: 22px;
       font-size: 14px;
+      background: rgba(7,17,31,0.50);
+      backdrop-filter: blur(8px);
     }
 
     h1 {
-      font-size: clamp(40px, 7vw, 72px);
+      font-size: clamp(44px, 5.4vw, 78px);
       line-height: 1.05;
       margin-bottom: 24px;
+      max-width: 760px;
+      text-shadow: 0 8px 32px rgba(0,0,0,0.85);
     }
 
     h1 span { color: var(--accent); }
 
     .hero p {
-      font-size: 19px;
-      color: var(--muted);
-      max-width: 680px;
+      font-size: 18px;
+      color: #e4edf8;
+      max-width: 690px;
       margin-bottom: 34px;
+      text-shadow: 0 5px 20px rgba(0,0,0,0.80);
     }
 
     .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -104,7 +145,10 @@
       border-radius: 12px;
       font-weight: 700;
       display: inline-block;
+      transition: transform .2s ease, opacity .2s ease;
     }
+
+    .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
       background: var(--accent);
@@ -114,34 +158,41 @@
     .btn-secondary {
       border: 1px solid var(--line);
       color: var(--text);
+      background: rgba(7,17,31,0.42);
+      backdrop-filter: blur(8px);
     }
 
     .hero-card {
-      background: rgba(17,36,61,0.75);
-      border: 1px solid var(--line);
+      align-self: end;
+      margin-bottom: 40px;
+      background: rgba(11, 26, 46, 0.73);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 28px;
-      padding: 30px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
+      padding: 34px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
     }
 
-    .hero-card h3 { color: var(--accent); margin-bottom: 16px; }
+    .hero-card h3 { color: var(--accent); margin-bottom: 18px; font-size: 24px; }
     .hero-card ul { list-style: none; }
     .hero-card li {
       padding: 12px 0;
-      border-bottom: 1px solid var(--line);
-      color: var(--muted);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      color: #d5dfed;
+      font-size: 18px;
     }
     .hero-card li:last-child { border-bottom: none; }
 
-    section { padding: 76px 0; }
+    section { padding: 82px 0; }
     .section-title {
-      font-size: 34px;
+      font-size: clamp(34px, 4vw, 48px);
       margin-bottom: 16px;
     }
     .section-lead {
       color: var(--muted);
-      max-width: 760px;
-      margin-bottom: 34px;
+      max-width: 780px;
+      margin-bottom: 38px;
+      font-size: 18px;
     }
 
     .grid {
@@ -150,25 +201,49 @@
       gap: 20px;
     }
 
+    .grid.two {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 760px;
+    }
+
     .card {
-      background: rgba(17,36,61,0.72);
+      background: var(--card);
       border: 1px solid var(--line);
       border-radius: 22px;
-      padding: 26px;
+      padding: 28px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.18);
     }
 
     .card h3 {
       color: var(--accent);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-size: 22px;
     }
 
     .card p, .card li { color: var(--muted); }
     .card ul { padding-left: 18px; }
 
+    .placeholder {
+      width: 100%;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: rgba(255,255,255,0.82);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      background:
+        linear-gradient(135deg, rgba(72,202,228,0.16), rgba(244,180,26,0.08)),
+        linear-gradient(135deg, #102544, #07111f);
+      border-bottom: 1px solid var(--line);
+    }
+
     .about {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 32px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 34px;
       align-items: start;
     }
 
@@ -210,18 +285,21 @@
       background: linear-gradient(135deg, rgba(244,180,26,0.16), rgba(72,202,228,0.12));
       border: 1px solid var(--line);
       border-radius: 28px;
-      padding: 36px;
+      padding: 38px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 28px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.22);
     }
 
-    .contact-box p { color: var(--muted); }
+    .contact-box p { color: var(--muted); font-size: 18px; }
     .contact-list { list-style: none; }
     .contact-list li {
       padding: 10px 0;
       color: var(--muted);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
+    .contact-list li:last-child { border-bottom: none; }
 
     footer {
       border-top: 1px solid var(--line);
@@ -230,11 +308,40 @@
       font-size: 14px;
     }
 
-    @media (max-width: 850px) {
-      .hero, .about, .contact-box { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; }
+    @media (max-width: 980px) {
+      .hero-wrap { min-height: auto; }
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 48px 0 70px;
+      }
+      .hero-logo {
+        width: min(82vw, 440px);
+        margin: 0 auto 42px auto;
+      }
+      .hero-card {
+        margin-bottom: 0;
+      }
+      .grid, .grid.two, .about, .contact-box { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      section { padding: 54px 0; }
+      section { padding: 58px 0; }
+      h1 { font-size: clamp(40px, 10vw, 64px); }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: 90%; }
+      .hero-wrap {
+        background-position: 62% center;
+      }
+      .hero-logo {
+        width: 100%;
+        margin-bottom: 36px;
+      }
+      .logo span { font-size: 11px; }
+      .logo img { height: 36px; }
+      .hero-card { padding: 24px; }
+      .hero-card li { font-size: 16px; }
+      .card { padding: 24px; }
     }
   </style>
 </head>
@@ -242,8 +349,8 @@
   <header>
     <div class="container">
       <nav>
-        <div class="logo" style="display:flex;align-items:center;gap:14px;">
-          <img src="logo.png" alt="66°33' Arctic Industrial Solutions" style="height:52px;width:auto;border-radius:10px;" />
+        <div class="logo">
+          <img src="logo.png" alt="66°33' Arctic Industrial Solutions" />
           <span>66°33' ARCTIC INDUSTRIAL SOLUTIONS</span>
         </div>
         <div class="nav-links">
@@ -257,32 +364,34 @@
   </header>
 
   <main>
-    <section class="hero container" style="position:relative;overflow:hidden;min-height:960px;align-items:center;">
-      <div style="position:absolute;inset:0;background:url('hero-refinery.png') center/cover no-repeat;opacity:0.92;mix-blend-mode:normal;filter:contrast(1.08) brightness(0.72) saturate(1.05);"></div>
-      <div>
-        <div class="badge">Norway • Poland • Europe</div>
-        <img src="logo.png" alt="66°33 Arctic Industrial Solutions Logo" style="width:min(92vw, 1400px);max-width:none;margin:0 auto 35px auto;display:block;filter:drop-shadow(0 25px 60px rgba(0,0,0,0.75));position:relative;left:-5%;" />
-        <h1>Industrial supervision, <span>piping</span>, steel structures & pressure testing.</h1>
-        <p>
-          Profesjonalne wsparcie dla projektów przemysłowych: prefabrykacja rurociągów, nadzór montażu, koordynacja brygad, próby ciśnieniowe oraz prace kołnierzowe.
-        </p>
-        <div class="buttons">
-          <a class="btn btn-primary" href="#contact">Skontaktuj się</a>
-          <a class="btn btn-secondary" href="#services">Zobacz usługi</a>
+    <div class="hero-wrap">
+      <section class="hero container">
+        <div class="hero-left">
+          <img class="hero-logo" src="logo.png" alt="66°33 Arctic Industrial Solutions Logo" />
+          <div class="badge">Norway • Sweden • Finland • Europe • Armenia</div>
+          <h1>Industrial supervision, <span>piping, steel structures</span> & pressure testing.</h1>
+          <p>
+            Profesjonalne wsparcie dla projektów przemysłowych: prefabrykacja rurociągów, konstrukcje stalowe, nadzór montażu, koordynacja brygad, próby ciśnieniowe oraz prace kołnierzowe.
+          </p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#contact">Skontaktuj się</a>
+            <a class="btn btn-secondary" href="#services">Zobacz usługi</a>
+          </div>
         </div>
-      </div>
 
-      <div class="hero-card">
-        <h3>Zakres kompetencji</h3>
-        <ul>
-          <li>Pipeline Prefabrication Manager / Pre-Assembly Manager</li>
-          <li>Piping assembly supervision</li>
-          <li>Pressure testing coordination</li>
-          <li>Flange work / bolted connections</li>
-          <li>Industrial project support</li>
-        </ul>
-      </div>
-    </section>
+        <div class="hero-card">
+          <h3>Zakres kompetencji</h3>
+          <ul>
+            <li>Pipeline Prefabrication Manager / Pre-Assembly Manager</li>
+            <li>Piping assembly supervision</li>
+            <li>Pressure testing coordination</li>
+            <li>Steel structures supervision</li>
+            <li>Flange work / bolted connections</li>
+            <li>Industrial project support</li>
+          </ul>
+        </div>
+      </section>
+    </div>
 
     <section id="services" class="container">
       <h2 class="section-title">Usługi</h2>
@@ -290,7 +399,7 @@
         Pomagam firmom przemysłowym w organizacji, kontroli i realizacji prac technicznych na projektach offshore, onshore, stoczniowych i instalacyjnych.
       </p>
 
-      <div class="grid">
+      <div class="grid two">
         <div class="card">
           <h3>Prefabrykacja rurociągów</h3>
           <p>Nadzór nad prefabrykacją, kontrola jakości wykonania, organizacja pracy zespołów oraz wsparcie dokumentacji technicznej.</p>
@@ -311,7 +420,10 @@
           <h3>Consulting techniczny</h3>
           <p>Doradztwo dla firm wykonawczych, ocena organizacji prac, wsparcie rekrutacyjne i techniczna weryfikacja personelu.</p>
         </div>
-        
+        <div class="card">
+          <h3>Konstrukcje stalowe</h3>
+          <p>Nadzór nad montażem konstrukcji stalowych, koordynacja prac i wsparcie techniczne przy projektach przemysłowych.</p>
+        </div>
       </div>
     </section>
 
@@ -322,10 +434,11 @@
           66°33' Arctic Industrial Solutions to niezależne wsparcie techniczne dla przemysłu inspirowane północą oraz doświadczeniem zdobytym podczas realizacji projektów w Norwegii, Szwecji, Finlandii, Europie oraz Armenii. Łączę praktyczne doświadczenie z placu budowy z umiejętnością prowadzenia ludzi, komunikacji z klientem, koordynacji międzynarodowych zespołów oraz kontroli jakości w wymagających środowiskach przemysłowych.
         </p>
         <div class="languages">
-          <span class="pill">Polski</span>
-          <span class="pill">English</span>
-          <span class="pill">Norsk</span>
-          <span class="pill">Русский</span>
+          <span class="pill">Piping</span>
+          <span class="pill">Steel Structures</span>
+          <span class="pill">Pressure Testing</span>
+          <span class="pill">Flange Work</span>
+          <span class="pill">Industrial Supervision</span>
         </div>
       </div>
 
@@ -342,38 +455,37 @@
           <strong>HSE</strong>
           bezpieczna organizacja pracy
         </div>
-        
       </div>
     </section>
 
     <section id="projects" class="container">
       <h2 class="section-title">Selected Projects & Industrial Environment</h2>
       <p class="section-lead">
-        Industrial atmosphere inspired by Arctic engineering, refinery infrastructure, offshore energy and Scandinavian precision.
+        Experience from demanding projects in offshore, refinery and industrial environments. Focus on safety, coordination, quality and efficient execution.
       </p>
 
       <div class="grid">
         <div class="card" style="padding:0;overflow:hidden;">
-          <div style="width:100%;height:240px;background:linear-gradient(135deg,#102544,#091627);display:flex;align-items:center;justify-content:center;color:#4bc0ff;font-size:22px;font-weight:700;letter-spacing:1px;">Industrial Projects</div>
-          <div style="padding:22px;">
+          <div class="placeholder">Industrial Projects</div>
+          <div style="padding:24px;">
             <h3>Industrial Projects</h3>
             <p>Pipeline systems, fabrication and industrial coordination in demanding environments.</p>
           </div>
         </div>
 
         <div class="card" style="padding:0;overflow:hidden;">
-          <div style="width:100%;height:240px;background:linear-gradient(135deg,#132c4f,#0a1626);display:flex;align-items:center;justify-content:center;color:#ffc21a;font-size:22px;font-weight:700;letter-spacing:1px;">Arctic Steel Atmosphere</div>
-          <div style="padding:22px;">
+          <div class="placeholder">Arctic Steel Atmosphere</div>
+          <div style="padding:24px;">
             <h3>Arctic Steel Atmosphere</h3>
             <p>Nordic identity combined with precision engineering and offshore professionalism.</p>
           </div>
         </div>
 
         <div class="card" style="padding:0;overflow:hidden;">
-          <div style="width:100%;height:240px;background:linear-gradient(135deg,#18395f,#08131f);display:flex;align-items:center;justify-content:center;color:#ffffff;font-size:22px;font-weight:700;letter-spacing:1px;">Offshore Operations</div>
-          <div style="padding:22px;">
+          <div class="placeholder">Offshore Operations</div>
+          <div style="padding:24px;">
             <h3>Offshore & Heavy Industry Support</h3>
-            <p>Experience inspired by offshore operations, refinery infrastructure, industrial supervision and demanding projects across Northern Europe.</p>
+            <p>Offshore installations, refinery infrastructure, industrial supervision and demanding projects across Northern Europe.</p>
           </div>
         </div>
       </div>
@@ -382,7 +494,7 @@
     <section id="experience" class="container">
       <h2 class="section-title">Doświadczenie projektowe</h2>
       <p class="section-lead">
-        Praktyczne doświadczenie w prefabrykacji i montażu instalacji przemysłowych, pracy z dokumentacją techniczną, prowadzeniu zespołów oraz współpracy z klientami na dużych projektach.
+        Praktyczne doświadczenie w prefabrykacji i montażu instalacji przemysłowych, konstrukcjach stalowych, pracy z dokumentacją techniczną, prowadzeniu zespołów oraz współpracy z klientami na dużych projektach.
       </p>
       <div class="grid">
         <div class="card">
@@ -427,10 +539,10 @@
             <li><strong>Direct:</strong> szymon.stepinski@6633aic.com</li>
             <li><strong>Norway:</strong> +47 401 98 695</li>
             <li><strong>Poland:</strong> +48 531 161 258</li>
-            <li><strong>Lokalizacja:</strong> Norway / EU projects</li>
+            <li><strong>Lokalizacja:</strong> Norway / EU / Armenia projects</li>
             <li><strong>LinkedIn:</strong> linkedin.com/in/twoj-profil</li>
           </ul>
-          <div class="buttons" style="margin-top: 18px;">
+          <div class="buttons" style="margin-top: 20px;">
             <a class="btn btn-primary" href="mailto:contact@6633ais.com">Wyślij email</a>
           </div>
         </div>
