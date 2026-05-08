@@ -513,29 +513,6 @@
     }
     .contact-list a { color:var(--white); }
 
-    .linkedin-link {
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      color:var(--white);
-      font-weight:800;
-    }
-
-    .linkedin-icon {
-      width:24px;
-      height:24px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:5px;
-      background:#0a66c2;
-      color:#fff;
-      font-weight:900;
-      font-size:16px;
-      line-height:1;
-      flex:0 0 auto;
-    }
-
 
     .band-card h2,
     .band-card p,
@@ -839,6 +816,7 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact" data-i18n="btn_contact">Contact us</a>
             <a class="btn btn-secondary" href="#services" data-i18n="btn_services">View services</a>
+            <a class="btn btn-secondary" href="company-profile.pdf" target="_blank" rel="noopener" data-i18n="btn_company_profile">Download Company Profile</a>
           </div>
         </div>
 
@@ -912,7 +890,7 @@
       <div>
         <h2 class="section-title" data-i18n="about_title">About the company</h2>
         <p class="section-lead" data-i18n="about_text">
-          66°33' Arctic Industrial Solutions provides independent technical support for industry, inspired by the North and by experience gained on projects in Norway, Sweden, Finland and across Europe. I combine practical field experience with leadership, client communication, international team coordination and quality control in demanding industrial environments.
+          66°33' Arctic Industrial Solutions provides independent technical support for industry, inspired by the North and by experience gained on projects in Norway, Sweden, Finland, Europe. I combine practical field experience with leadership, client communication, international team coordination and quality control in demanding industrial environments.
         </p>
 
         <div class="pills">
@@ -1014,10 +992,10 @@
             <li><strong>Email:</strong> <a href="mailto:contact@6633ais.com">contact@6633ais.com</a></li>
             <li><strong>Office:</strong> <a href="mailto:office@6633ais.com">office@6633ais.com</a></li>
             <li><strong>Direct:</strong> <a href="mailto:szymon.stepinski@6633ais.com">szymon.stepinski@6633ais.com</a></li>
-            <li><strong>LinkedIn:</strong> <a class="linkedin-link" href="https://www.linkedin.com/in/szymon-st%C4%99pi%C5%84ski-436912154/" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span><span>Connect on LinkedIn</span></a></li>
             <li><strong>Norway:</strong> <a href="tel:+4740198695">+47 401 98 695</a></li>
             <li><strong>Poland:</strong> <a href="tel:+48531161258">+48 531 161 258</a></li>
             <li><strong data-i18n="location_label">Location:</strong> <span data-i18n="location_text">Norway / EU</span></li>
+            <li><strong data-i18n="company_profile_label">Company Profile:</strong> <a href="company-profile.pdf" target="_blank" rel="noopener" data-i18n="company_profile_link">Download PDF</a></li>
           </ul>
         </div>
       </div>
@@ -1059,7 +1037,7 @@
         s6_title: "Steel structures",
         s6_text: "Supervision of steel structure installation, coordination of work and technical support for industrial projects.",
         about_title: "About the company",
-        about_text: "66°33' Arctic Industrial Solutions provides independent technical support for industry, inspired by the North and by experience gained on projects in Norway, Sweden, Finland and across Europe. I combine practical field experience with leadership, client communication, international team coordination and quality control in demanding industrial environments.",
+        about_text: "66°33' Arctic Industrial Solutions provides independent technical support for industry, inspired by the North and by experience gained on projects in Norway, Sweden, Finland, Europe. I combine practical field experience with leadership, client communication, international team coordination and quality control in demanding industrial environments.",
         stat1: "years of technical experience",
         stat2: "projects in Europe and Norway",
         stat3: "safe work organization",
@@ -1080,7 +1058,10 @@
         contact_title: "Contact",
         contact_text: "Looking for an experienced prefabrication manager, coordinator, supervisor or technical consultant for an industrial project? Send a message or call.",
         location_label: "Location:",
-        location_text: "Norway / EU"
+        location_text: "Norway / EU",
+        btn_company_profile: "Download Company Profile",
+        company_profile_label: "Company Profile:",
+        company_profile_link: "Download PDF"
       },
       pl: {
         nav_services: "Usługi",
@@ -1111,7 +1092,7 @@
         s6_title: "Konstrukcje stalowe",
         s6_text: "Nadzór nad montażem konstrukcji stalowych, koordynacja prac i wsparcie techniczne przy projektach przemysłowych.",
         about_title: "O firmie",
-        about_text: "66°33' Arctic Industrial Solutions to niezależne wsparcie techniczne dla przemysłu inspirowane północą oraz doświadczeniem zdobytym podczas realizacji projektów w Norwegii, Szwecji, Finlandii oraz Europie. Łączę praktyczne doświadczenie z placu budowy z umiejętnością prowadzenia ludzi, komunikacji z klientem, koordynacji międzynarodowych zespołów oraz kontroli jakości w wymagających środowiskach przemysłowych.",
+        about_text: "66°33' Arctic Industrial Solutions to niezależne wsparcie techniczne dla przemysłu inspirowane północą oraz doświadczeniem zdobytym podczas realizacji projektów w Norwegii, Szwecji, Finlandii, Europie. Łączę praktyczne doświadczenie z placu budowy z umiejętnością prowadzenia ludzi, komunikacji z klientem, koordynacji międzynarodowych zespołów oraz kontroli jakości w wymagających środowiskach przemysłowych.",
         stat1: "lat doświadczenia technicznego",
         stat2: "projekty w Europie i Norwegii",
         stat3: "bezpieczna organizacja pracy",
@@ -1132,7 +1113,10 @@
         contact_title: "Kontakt",
         contact_text: "Szukasz doświadczonego managera prefabrykacji, koordynatora, supervisora lub konsultanta technicznego do projektu przemysłowego? Napisz lub zadzwoń.",
         location_label: "Lokalizacja:",
-        location_text: "Norwegia / UE"
+        location_text: "Norwegia / UE",
+        btn_company_profile: "Pobierz Company Profile",
+        company_profile_label: "Company Profile:",
+        company_profile_link: "Pobierz PDF"
       },
       no: {
         nav_services: "Tjenester",
@@ -1163,7 +1147,7 @@
         s6_title: "Stålkonstruksjoner",
         s6_text: "Oppfølging av montasje av stålkonstruksjoner, koordinering av arbeid og teknisk støtte for industriprosjekter.",
         about_title: "Om selskapet",
-        about_text: "66°33' Arctic Industrial Solutions leverer uavhengig teknisk støtte til industrien, inspirert av nordområdene og erfaring fra prosjekter i Norge, Sverige, Finland og resten av Europa. Jeg kombinerer praktisk erfaring fra byggeplass med ledelse, kundekommunikasjon, koordinering av internasjonale team og kvalitetskontroll i krevende industrimiljøer.",
+        about_text: "66°33' Arctic Industrial Solutions leverer uavhengig teknisk støtte til industrien, inspirert av nordområdene og erfaring fra prosjekter i Norge, Sverige, Finland, Europa. Jeg kombinerer praktisk erfaring fra byggeplass med ledelse, kundekommunikasjon, koordinering av internasjonale team og kvalitetskontroll i krevende industrimiljøer.",
         stat1: "års teknisk erfaring",
         stat2: "prosjekter i Europa og Norge",
         stat3: "sikker organisering av arbeid",
@@ -1184,7 +1168,10 @@
         contact_title: "Kontakt",
         contact_text: "Trenger du en erfaren prefabrikasjonsleder, koordinator, supervisor eller teknisk konsulent til et industriprosjekt? Send en melding eller ring.",
         location_label: "Lokasjon:",
-        location_text: "Norge / EU"
+        location_text: "Norge / EU",
+        btn_company_profile: "Last ned Company Profile",
+        company_profile_label: "Company Profile:",
+        company_profile_link: "Last ned PDF"
       }
     };
 
