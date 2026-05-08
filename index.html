@@ -316,8 +316,8 @@
     }
 
     .image-band.nature-clean {
-      min-height: 58vh;
-      align-items: stretch;
+      min-height: 100vh;
+      align-items: center;
       margin-top: 0;
     }
 
@@ -327,6 +327,22 @@
       inset: 0;
       background: linear-gradient(180deg, rgba(3,9,22,0.00), rgba(3,9,22,0.18) 55%, rgba(3,9,22,0.60));
       pointer-events: none;
+    }
+
+    .nature-contact {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      padding: 90px 0;
+    }
+
+    .nature-contact .contact-box {
+      width: min(100%, 980px);
+      margin-left: auto;
+      background: rgba(8, 22, 45, 0.76);
+      backdrop-filter: blur(14px);
     }
 
     .band-content {
@@ -503,10 +519,13 @@
       }
 
       .grid,
-      .grid.two,
       .about,
       .contact-box {
         grid-template-columns:1fr;
+      }
+
+      .grid.two {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -531,6 +550,20 @@
       section { padding:62px 0; }
       .image-band { min-height:78vh; }
       .band-card { padding:26px; }
+
+      .grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .nature-contact {
+        min-height: 100vh;
+        padding: 70px 0;
+        align-items: center;
+      }
+
+      .nature-contact .contact-box {
+        margin-left: 0;
+      }
     }
   </style>
 </head>
@@ -617,7 +650,29 @@
       </div>
     </section>
 
-    <section class="image-band arctic-nature nature-clean" aria-label="Arctic winter landscape"></section>
+    <section id="contact" class="image-band arctic-nature nature-clean" aria-label="Arctic winter landscape">
+      <div class="container nature-contact">
+        <div class="contact-box">
+        <div>
+          <h2 class="section-title" data-i18n="contact_title">Contact</h2>
+          <p class="section-lead" data-i18n="contact_text">
+            Looking for an experienced prefabrication manager, coordinator, supervisor or technical consultant for an industrial project? Send a message or call.
+          </p>
+        </div>
+
+        <div>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:contact@6633ais.com">contact@6633ais.com</a></li>
+            <li><strong>Office:</strong> <a href="mailto:office@6633ais.com">office@6633ais.com</a></li>
+            <li><strong>Direct:</strong> <a href="mailto:szymon.stepinski@6633ais.com">szymon.stepinski@6633ais.com</a></li>
+            <li><strong>Norway:</strong> <a href="tel:+4740198695">+47 401 98 695</a></li>
+            <li><strong>Poland:</strong> <a href="tel:+48531161258">+48 531 161 258</a></li>
+            <li><strong data-i18n="location_label">Location:</strong> <span data-i18n="location_text">Norway / EU / Armenia projects</span></li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </section>
 
     <section id="services" class="container">
       <h2 class="section-title" data-i18n="services_title">Services</h2>
@@ -722,28 +777,7 @@
         </div>
       </div>
     </section>
-<section id="contact" class="container">
-      <div class="contact-box">
-        <div>
-          <h2 class="section-title" data-i18n="contact_title">Contact</h2>
-          <p class="section-lead" data-i18n="contact_text">
-            Looking for an experienced prefabrication manager, coordinator, supervisor or technical consultant for an industrial project? Send a message or call.
-          </p>
-        </div>
-
-        <div>
-          <ul class="contact-list">
-            <li><strong>Email:</strong> <a href="mailto:contact@6633ais.com">contact@6633ais.com</a></li>
-            <li><strong>Office:</strong> <a href="mailto:office@6633ais.com">office@6633ais.com</a></li>
-            <li><strong>Direct:</strong> <a href="mailto:szymon.stepinski@6633ais.com">szymon.stepinski@6633ais.com</a></li>
-            <li><strong>Norway:</strong> <a href="tel:+4740198695">+47 401 98 695</a></li>
-            <li><strong>Poland:</strong> <a href="tel:+48531161258">+48 531 161 258</a></li>
-            <li><strong data-i18n="location_label">Location:</strong> <span data-i18n="location_text">Norway / EU / Armenia projects</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
+</main>
 
   <footer>
     <div class="container">© 2026 66°33' Arctic Industrial Solutions. All rights reserved.</div>
