@@ -253,12 +253,12 @@
       justify-self:end;
       margin-bottom:34px;
       width:min(100%,520px);
-      background:rgba(8,22,45,.80);
-      backdrop-filter:blur(15px);
-      border:1px solid rgba(255,255,255,.16);
+      background: rgba(8,22,45,0.00);
+      backdrop-filter: none;
+      border: 1px solid rgba(255,255,255,0.32);
       border-radius:28px;
       padding:34px;
-      box-shadow:0 28px 70px rgba(0,0,0,.50), inset 0 1px 0 rgba(255,255,255,.06);
+      box-shadow:none;
     }
 
     .competence-card h3 {
@@ -303,9 +303,9 @@
 
     .image-band.winter-refinery {
       background:
-        linear-gradient(90deg, rgba(3,9,22,.54), rgba(3,9,22,.18), rgba(3,9,22,.60)),
-        linear-gradient(180deg, rgba(3,9,22,.08), rgba(3,9,22,.86)),
-        url("winter-refinery.png") center center / cover no-repeat;
+        linear-gradient(90deg, rgba(3,9,22,.28), rgba(3,9,22,.06), rgba(3,9,22,.34)),
+        linear-gradient(180deg, rgba(3,9,22,.02), rgba(3,9,22,.48)),
+        url("winter-refinery-bright.png") center center / cover no-repeat;
     }
 
     .image-band.arctic-nature {
@@ -358,8 +358,10 @@
     }
 
     .services-overlay .card {
-      background: rgba(8,22,45,.05);
-      backdrop-filter: blur(2px);
+      background: rgba(8,22,45,0.10);
+      backdrop-filter: none;
+      border: 1px solid rgba(255,255,255,0.24);
+      box-shadow: none;
     }
 
 
@@ -377,12 +379,12 @@
 
     .band-card {
       max-width:720px;
-      background:rgba(8,22,45,.70);
-      backdrop-filter:blur(12px);
-      border:1px solid rgba(255,255,255,.16);
+      background: rgba(8,22,45,0.00);
+      backdrop-filter: none;
+      border: 1px solid rgba(255,255,255,0.32);
       border-radius:28px;
       padding:34px;
-      box-shadow:0 24px 70px rgba(0,0,0,.36);
+      box-shadow:none;
     }
 
     .band-card h2 {
@@ -413,7 +415,7 @@
       border:1px solid var(--line);
       border-radius:22px;
       padding:28px;
-      box-shadow:0 8px 22px rgba(0,0,0,.14);
+      box-shadow:0 22px 48px rgba(0,0,0,.22);
     }
 
     .card h3 {
@@ -505,22 +507,15 @@
     }
     .contact-list a { color:var(--white); }
 
-    
-    .card,
-    .competence-card {
-      position: relative;
-      overflow: hidden;
-    }
 
-    .card::before,
-    .competence-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
-      pointer-events: none;
+    .band-card h2,
+    .band-card p,
+    .competence-card h3,
+    .competence-card li,
+    .services-overlay .card h3,
+    .services-overlay .card p {
+      text-shadow: 0 4px 16px rgba(0,0,0,0.95);
     }
-
 
     footer {
       border-top:1px solid var(--line);
