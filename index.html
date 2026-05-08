@@ -255,7 +255,7 @@
       width:min(100%,520px);
       background:rgba(8,22,45,.80);
       backdrop-filter:blur(15px);
-      border:1px solid rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
       border-radius:28px;
       padding:34px;
       box-shadow:0 28px 70px rgba(0,0,0,.50), inset 0 1px 0 rgba(255,255,255,.06);
@@ -358,8 +358,8 @@
     }
 
     .services-overlay .card {
-      background: rgba(8,22,45,.38);
-      backdrop-filter: blur(6px);
+      background: rgba(8,22,45,.05);
+      backdrop-filter: blur(2px);
     }
 
 
@@ -379,7 +379,7 @@
       max-width:720px;
       background:rgba(8,22,45,.70);
       backdrop-filter:blur(12px);
-      border:1px solid rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
       border-radius:28px;
       padding:34px;
       box-shadow:0 24px 70px rgba(0,0,0,.36);
@@ -413,7 +413,7 @@
       border:1px solid var(--line);
       border-radius:22px;
       padding:28px;
-      box-shadow:0 10px 28px rgba(0,0,0,.16);
+      box-shadow:0 8px 22px rgba(0,0,0,.14);
     }
 
     .card h3 {
@@ -504,6 +504,23 @@
       border-bottom:1px solid rgba(255,255,255,.10);
     }
     .contact-list a { color:var(--white); }
+
+    
+    .card,
+    .competence-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before,
+    .competence-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+      pointer-events: none;
+    }
+
 
     footer {
       border-top:1px solid var(--line);
