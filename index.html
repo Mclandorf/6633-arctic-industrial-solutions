@@ -3,529 +3,520 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>66°33' Arctic Industrial Solutions</title>
-  <meta name="description" content="66°33' Arctic Industrial Solutions - industrial supervision, piping, steel structures, pressure testing, flange work and pre-assembly management." />
+  <meta name="description" content="66°33' Arctic Industrial Solutions - industrial supervision, piping, steel structures, pressure testing, flange work, onshore and offshore technical support." />
 
   <style>
     :root {
-      --navy: #050d1c;
-      --navy2: #08172d;
-      --card: rgba(8, 22, 45, 0.80);
-      --gold: #f4b41a;
-      --blue: #48cae4;
-      --white: #f5f7fb;
-      --muted: #c6d2e3;
-      --line: rgba(255,255,255,0.14);
+      --navy:#050d1c;
+      --navy2:#08172d;
+      --gold:#f4b41a;
+      --blue:#48cae4;
+      --white:#f5f7fb;
+      --muted:#c6d2e3;
+      --line:rgba(255,255,255,0.14);
+      --card:rgba(8,22,45,0.82);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, var(--navy), var(--navy2));
-      color: var(--white);
-      overflow-x: hidden;
-      line-height: 1.6;
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(135deg,var(--navy),var(--navy2));
+      color:var(--white);
+      overflow-x:hidden;
+      line-height:1.6;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1380px, 92%);
-      margin: 0 auto;
-    }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(1380px,92%); margin:0 auto; }
 
     header {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 1000;
-      background: rgba(3, 9, 22, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
+      position:fixed;
+      inset:0 0 auto 0;
+      z-index:1000;
+      background:rgba(3,9,22,0.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
     }
 
     nav {
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-weight: 900;
-      color: var(--gold);
-      letter-spacing: 0.7px;
-      font-size: 15px;
-      white-space: nowrap;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-weight:900;
+      color:var(--gold);
+      letter-spacing:.7px;
+      font-size:15px;
+      white-space:nowrap;
     }
 
     .brand img {
-      width: 54px;
-      height: 54px;
-      object-fit: cover;
-      border-radius: 9px;
-      box-shadow: 0 8px 22px rgba(0,0,0,.45);
+      width:54px;
+      height:54px;
+      object-fit:cover;
+      border-radius:9px;
+      box-shadow:0 8px 22px rgba(0,0,0,.45);
     }
 
     .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 26px;
+      display:flex;
+      align-items:center;
+      gap:22px;
     }
 
     .nav-links {
-      display: flex;
-      gap: 28px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #e7edf7;
+      display:flex;
+      gap:26px;
+      font-size:14px;
+      font-weight:800;
+      color:#e7edf7;
     }
 
-    .nav-links a:hover {
-      color: var(--gold);
+    .nav-links a:hover { color:var(--gold); }
+
+    .language-dropdown {
+      position:relative;
     }
 
-    .lang-switch {
-      display: flex;
-      gap: 6px;
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 999px;
-      padding: 4px;
-      background: rgba(255,255,255,0.05);
+    .language-button {
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.06);
+      color:#fff;
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:900;
+      cursor:pointer;
+      min-width:104px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
     }
 
-    .lang-switch button {
-      border: none;
-      border-radius: 999px;
-      padding: 7px 10px;
-      background: transparent;
-      color: #d9e2ef;
-      font-weight: 800;
-      cursor: pointer;
-      font-size: 12px;
+    .language-menu {
+      position:absolute;
+      right:0;
+      top:46px;
+      min-width:150px;
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(3,9,22,0.96);
+      backdrop-filter:blur(14px);
+      border-radius:16px;
+      padding:8px;
+      box-shadow:0 18px 40px rgba(0,0,0,0.45);
+      display:none;
     }
 
-    .lang-switch button.active {
-      background: var(--gold);
-      color: #07111f;
+    .language-dropdown.open .language-menu { display:block; }
+
+    .language-menu button {
+      width:100%;
+      border:none;
+      background:transparent;
+      color:#e8effa;
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:800;
+      text-align:left;
+      cursor:pointer;
+    }
+
+    .language-menu button:hover,
+    .language-menu button.active {
+      background:var(--gold);
+      color:#07111f;
     }
 
     .hero {
-      min-height: 100vh;
-      position: relative;
-      padding-top: 76px;
-      overflow: hidden;
+      min-height:100vh;
+      position:relative;
+      padding-top:76px;
+      overflow:hidden;
       background:
-        linear-gradient(90deg, rgba(3,9,22,0.18) 0%, rgba(3,9,22,0.06) 48%, rgba(3,9,22,0.12) 100%),
-        linear-gradient(180deg, rgba(3,9,22,0.05) 0%, rgba(3,9,22,0.10) 48%, rgba(3,9,22,0.70) 100%),
-        url("hero-refinery.png") center center / cover no-repeat,
-        url("hero-rafinery.png") center center / cover no-repeat;
+        linear-gradient(90deg, rgba(3,9,22,.18) 0%, rgba(3,9,22,.06) 48%, rgba(3,9,22,.12) 100%),
+        linear-gradient(180deg, rgba(3,9,22,.05) 0%, rgba(3,9,22,.10) 48%, rgba(3,9,22,.70) 100%),
+        url("hero-refinery.png") center center / cover no-repeat;
     }
 
     .hero-inner {
-      min-height: calc(100vh - 76px);
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(520px, 650px) minmax(420px, 520px);
-      gap: clamp(70px, 8vw, 140px);
-      align-items: end;
-      justify-content: space-between;
-      padding: 46px 0 72px;
+      min-height:calc(100vh - 76px);
+      position:relative;
+      display:grid;
+      grid-template-columns:minmax(520px,660px) minmax(420px,520px);
+      gap:clamp(70px,8vw,140px);
+      align-items:end;
+      justify-content:space-between;
+      padding:46px 0 72px;
     }
 
     .hero-logo {
-      position: absolute;
-      top: 34px;
-      left: 0;
-      width: min(34vw, 520px);
-      z-index: 2;
-      filter: drop-shadow(0 22px 44px rgba(0,0,0,0.82));
+      position:absolute;
+      top:24px;
+      left:0;
+      width:min(38vw,575px);
+      z-index:2;
+      filter:drop-shadow(0 22px 44px rgba(0,0,0,.82));
     }
 
     .hero-left {
-      position: relative;
-      z-index: 3;
-      padding-top: 330px;
-      max-width: 650px;
+      position:relative;
+      z-index:3;
+      padding-top:360px;
+      max-width:690px;
     }
 
     .badge {
-      display: inline-block;
-      padding: 9px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(72,202,228,0.42);
-      color: var(--blue);
-      background: rgba(4, 13, 30, 0.58);
-      backdrop-filter: blur(8px);
-      font-size: 14px;
-      margin-bottom: 20px;
+      display:inline-block;
+      padding:9px 16px;
+      border-radius:999px;
+      border:1px solid rgba(72,202,228,.42);
+      color:var(--blue);
+      background:rgba(4,13,30,.58);
+      backdrop-filter:blur(8px);
+      font-size:14px;
+      margin-bottom:20px;
     }
 
     .hero-title {
-      max-width: 650px;
-      font-size: clamp(46px, 4.05vw, 66px);
-      line-height: 1.06;
-      letter-spacing: -1.4px;
-      font-weight: 900;
-      text-shadow: 0 10px 34px rgba(0,0,0,0.92);
-      margin-bottom: 28px;
-      color: var(--white);
+      max-width:690px;
+      font-size:clamp(46px,4.05vw,66px);
+      line-height:1.06;
+      letter-spacing:-1.4px;
+      font-weight:900;
+      text-shadow:0 10px 34px rgba(0,0,0,.92);
+      margin-bottom:28px;
+      color:var(--white);
     }
 
-    .hero-title .line {
-      display: block;
-    }
-
-    .hero-title .highlight {
-      display: block;
-      color: var(--gold);
-    }
+    .hero-title .line { display:block; }
+    .hero-title .highlight { display:block; color:var(--gold); }
 
     html[lang="en"] .hero-title .line,
     html[lang="en"] .hero-title .highlight,
     html[lang="no"] .hero-title .line,
     html[lang="no"] .hero-title .highlight {
-      white-space: nowrap;
+      white-space:nowrap;
     }
 
     html[lang="pl"] .hero-title {
-      font-size: clamp(42px, 3.45vw, 58px);
-      max-width: 710px;
-      line-height: 1.08;
+      font-size:clamp(42px,3.45vw,58px);
+      max-width:760px;
+      line-height:1.08;
     }
 
     html[lang="pl"] .hero-title .line,
     html[lang="pl"] .hero-title .highlight {
-      white-space: normal;
+      white-space:normal;
     }
 
     .hero-copy {
-      max-width: 610px;
-      font-size: 18px;
-      color: #edf3fc;
-      text-shadow: 0 7px 24px rgba(0,0,0,0.90);
-      margin-bottom: 30px;
+      max-width:630px;
+      font-size:18px;
+      color:#edf3fc;
+      text-shadow:0 7px 24px rgba(0,0,0,.90);
+      margin-bottom:30px;
     }
 
     .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
     }
 
     .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 12px;
-      font-weight: 800;
-      transition: transform .2s ease;
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:12px;
+      font-weight:900;
+      transition:transform .2s ease;
     }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #07111f;
-    }
-
+    .btn:hover { transform:translateY(-2px); }
+    .btn-primary { background:var(--gold); color:#07111f; }
     .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.20);
-      background: rgba(5,13,28,0.54);
-      backdrop-filter: blur(8px);
+      border:1px solid rgba(255,255,255,.20);
+      background:rgba(5,13,28,.54);
+      backdrop-filter:blur(8px);
     }
 
     .competence-card {
-      position: relative;
-      z-index: 3;
-      align-self: end;
-      justify-self: end;
-      margin-bottom: 34px;
-      width: min(100%, 520px);
-      background: rgba(8, 22, 45, 0.80);
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 28px;
-      padding: 34px;
-      box-shadow: 0 28px 70px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.06);
+      position:relative;
+      z-index:3;
+      align-self:end;
+      justify-self:end;
+      margin-bottom:34px;
+      width:min(100%,520px);
+      background:rgba(8,22,45,.80);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:28px;
+      padding:34px;
+      box-shadow:0 28px 70px rgba(0,0,0,.50), inset 0 1px 0 rgba(255,255,255,.06);
     }
 
     .competence-card h3 {
-      color: var(--gold);
-      font-size: 28px;
-      margin-bottom: 22px;
+      color:var(--gold);
+      font-size:28px;
+      margin-bottom:22px;
     }
 
-    .competence-card ul {
-      list-style: none;
-    }
-
+    .competence-card ul { list-style:none; }
     .competence-card li {
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.13);
-      color: #e0e8f5;
-      font-size: 18px;
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,.13);
+      color:#e0e8f5;
+      font-size:18px;
     }
+    .competence-card li:last-child { border-bottom:none; }
 
-    .competence-card li:last-child {
-      border-bottom: none;
-    }
-
-    section {
-      padding: 90px 0;
-    }
+    section { padding:90px 0; }
 
     .section-title {
-      font-size: clamp(36px, 4vw, 54px);
-      line-height: 1.1;
-      margin-bottom: 18px;
+      font-size:clamp(36px,4vw,54px);
+      line-height:1.1;
+      margin-bottom:18px;
     }
 
     .section-lead {
-      max-width: 860px;
-      color: var(--muted);
-      font-size: 19px;
-      margin-bottom: 40px;
+      max-width:860px;
+      color:var(--muted);
+      font-size:19px;
+      margin-bottom:40px;
+    }
+
+    .image-band {
+      min-height:86vh;
+      position:relative;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .image-band.winter-refinery {
+      background:
+        linear-gradient(90deg, rgba(3,9,22,.54), rgba(3,9,22,.18), rgba(3,9,22,.60)),
+        linear-gradient(180deg, rgba(3,9,22,.08), rgba(3,9,22,.86)),
+        url("winter-refinery.png") center center / cover no-repeat;
+    }
+
+    .image-band.arctic-nature {
+      background:
+        linear-gradient(90deg, rgba(3,9,22,.42), rgba(3,9,22,.08), rgba(3,9,22,.32)),
+        linear-gradient(180deg, rgba(3,9,22,.02), rgba(3,9,22,.70)),
+        url("arctic-winter.png") center center / cover no-repeat;
+    }
+
+    .band-content {
+      width:min(1380px,92%);
+      margin:0 auto;
+      padding:0 0 82px 0;
+      position:relative;
+      z-index:2;
+    }
+
+    .band-card {
+      max-width:720px;
+      background:rgba(8,22,45,.70);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:28px;
+      padding:34px;
+      box-shadow:0 24px 70px rgba(0,0,0,.36);
+    }
+
+    .band-card h2 {
+      color:var(--gold);
+      font-size:clamp(34px,4vw,54px);
+      line-height:1.1;
+      margin-bottom:18px;
+    }
+
+    .band-card p {
+      color:#e4edf9;
+      font-size:19px;
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
     }
 
     .grid.two {
-      grid-template-columns: repeat(2, 1fr);
-      max-width: 900px;
+      grid-template-columns:repeat(2,1fr);
+      max-width:900px;
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 28px;
-      box-shadow: 0 22px 48px rgba(0,0,0,0.22);
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:0 22px 48px rgba(0,0,0,.22);
     }
 
     .card h3 {
-      color: var(--gold);
-      font-size: 23px;
-      margin-bottom: 12px;
+      color:var(--gold);
+      font-size:23px;
+      margin-bottom:12px;
     }
 
-    .card p, .card li {
-      color: var(--muted);
-      font-size: 17px;
+    .card p,
+    .card li {
+      color:var(--muted);
+      font-size:17px;
     }
 
     .placeholder {
-      height: 230px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: rgba(255,255,255,0.85);
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: 1px;
+      height:230px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:rgba(255,255,255,.88);
+      font-size:20px;
+      font-weight:900;
+      letter-spacing:1px;
       background:
-        radial-gradient(circle at 30% 20%, rgba(72,202,228,0.20), transparent 35%),
-        linear-gradient(135deg, #102644, #06101f);
-      border-bottom: 1px solid var(--line);
+        radial-gradient(circle at 30% 20%, rgba(72,202,228,.20), transparent 35%),
+        linear-gradient(135deg,#102644,#06101f);
+      border-bottom:1px solid var(--line);
     }
 
     .about {
-      display: grid;
-      grid-template-columns: 1fr .9fr;
-      gap: 42px;
-      align-items: start;
+      display:grid;
+      grid-template-columns:1fr .9fr;
+      gap:42px;
+      align-items:start;
     }
 
     .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:24px;
     }
 
     .pill {
-      padding: 9px 13px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      background: rgba(255,255,255,0.04);
+      padding:9px 13px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      background:rgba(255,255,255,.04);
     }
 
     .stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
     }
 
     .stat {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(255,255,255,0.06);
-      padding: 24px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.06);
+      padding:24px;
     }
 
     .stat strong {
-      display: block;
-      color: var(--blue);
-      font-size: 32px;
-      margin-bottom: 6px;
+      display:block;
+      color:var(--blue);
+      font-size:32px;
+      margin-bottom:6px;
     }
 
     .contact-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 34px;
-      padding: 42px;
-      border-radius: 28px;
-      border: 1px solid var(--line);
-      background: linear-gradient(135deg, rgba(244,180,26,0.16), rgba(72,202,228,0.10));
-      box-shadow: 0 25px 60px rgba(0,0,0,0.22);
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:34px;
+      padding:42px;
+      border-radius:28px;
+      border:1px solid var(--line);
+      background:linear-gradient(135deg, rgba(244,180,26,.16), rgba(72,202,228,.10));
+      box-shadow:0 25px 60px rgba(0,0,0,.22);
     }
 
-    .contact-list {
-      list-style: none;
-    }
-
+    .contact-list { list-style:none; }
     .contact-list li {
-      padding: 11px 0;
-      color: var(--muted);
-      border-bottom: 1px solid rgba(255,255,255,0.10);
+      padding:11px 0;
+      color:var(--muted);
+      border-bottom:1px solid rgba(255,255,255,.10);
     }
-
-    .contact-list a {
-      color: var(--white);
-    }
+    .contact-list a { color:var(--white); }
 
     footer {
-      border-top: 1px solid var(--line);
-      padding: 30px 0;
-      color: #9eabbf;
-      font-size: 14px;
+      border-top:1px solid var(--line);
+      padding:30px 0;
+      color:#9eabbf;
+      font-size:14px;
     }
 
-    @media (max-width: 1200px) {
+    @media (max-width:1200px) {
       .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding-top: 34px;
+        grid-template-columns:1fr;
+        gap:30px;
+        padding-top:34px;
       }
 
       .hero-logo {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: min(78vw, 500px);
-        margin: 0 auto 28px;
-        display: block;
+        position:relative;
+        top:auto;
+        left:auto;
+        width:min(82vw,545px);
+        margin:0 auto 28px;
+        display:block;
       }
 
-      .hero-left {
-        padding-top: 0;
-      }
+      .hero-left { padding-top:0; }
 
       .hero-title .line,
       .hero-title .highlight {
-        white-space: normal !important;
+        white-space:normal !important;
       }
 
       .competence-card {
-        margin-bottom: 0;
-        justify-self: start;
+        margin-bottom:0;
+        justify-self:start;
       }
 
       .grid,
       .grid.two,
       .about,
       .contact-box {
-        grid-template-columns: 1fr;
+        grid-template-columns:1fr;
       }
     }
 
-    @media (max-width: 920px) {
-      .nav-links {
-        display: none;
-      }
+    @media (max-width:920px) {
+      .nav-links { display:none; }
     }
 
-    @media (max-width: 600px) {
-      .container {
-        width: 90%;
-      }
-
-      nav {
-        height: 68px;
-      }
-
-      .brand img {
-        width: 42px;
-        height: 42px;
-      }
-
-      .brand span {
-        font-size: 10px;
-      }
-
-      .lang-switch button {
-        padding: 6px 8px;
-        font-size: 11px;
-      }
-
-      .hero {
-        padding-top: 68px;
-        background-position: 63% center;
-      }
-
-      .hero-inner {
-        min-height: auto;
-        padding: 34px 0 58px;
-      }
-
-      .hero-logo {
-        width: 100%;
-      }
-
-      .hero-title {
-        font-size: 42px !important;
-        line-height: 1.08;
-      }
-
-      .hero-copy {
-        font-size: 17px;
-      }
-
-      .competence-card {
-        padding: 24px;
-      }
-
-      .competence-card li {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 62px 0;
-      }
+    @media (max-width:600px) {
+      .container { width:90%; }
+      nav { height:68px; }
+      .brand img { width:42px; height:42px; }
+      .brand span { font-size:10px; }
+      .language-button { min-width:88px; padding:8px 11px; font-size:12px; }
+      .language-menu { top:42px; }
+      .hero { padding-top:68px; background-position:63% center; }
+      .hero-inner { min-height:auto; padding:34px 0 58px; }
+      .hero-logo { width:100%; }
+      .hero-title { font-size:42px !important; line-height:1.08; }
+      .hero-copy { font-size:17px; }
+      .competence-card { padding:24px; }
+      .competence-card li { font-size:16px; }
+      section { padding:62px 0; }
+      .image-band { min-height:78vh; }
+      .band-card { padding:26px; }
     }
   </style>
 </head>
@@ -547,10 +538,16 @@
             <a href="#contact" data-i18n="nav_contact">Contact</a>
           </div>
 
-          <div class="lang-switch" aria-label="Language selector">
-            <button type="button" class="active" onclick="setLang('en')" id="btn-en">EN</button>
-            <button type="button" onclick="setLang('pl')" id="btn-pl">PL</button>
-            <button type="button" onclick="setLang('no')" id="btn-no">NO</button>
+          <div class="language-dropdown" id="languageDropdown">
+            <button class="language-button" type="button" onclick="toggleLangMenu()">
+              <span id="currentLangLabel">EN</span>
+              <span>▾</span>
+            </button>
+            <div class="language-menu">
+              <button type="button" onclick="setLang('en')" id="btn-en">English</button>
+              <button type="button" onclick="setLang('pl')" id="btn-pl">Polski</button>
+              <button type="button" onclick="setLang('no')" id="btn-no">Norsk</button>
+            </div>
           </div>
         </div>
       </nav>
@@ -591,6 +588,17 @@
             <li>Flange work / bolted connections</li>
             <li>Industrial project support</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-band winter-refinery">
+      <div class="band-content">
+        <div class="band-card">
+          <h2 data-i18n="winter_refinery_title">Industrial capability in harsh northern conditions</h2>
+          <p data-i18n="winter_refinery_text">
+            Arctic weather, demanding access, strict safety requirements and complex industrial environments require discipline, planning and experienced technical supervision.
+          </p>
         </div>
       </div>
     </section>
@@ -674,7 +682,7 @@
 
       <div class="grid">
         <div class="card" style="padding:0; overflow:hidden;">
-          <div class="placeholder">Industrial Projects</div>
+          <div class="placeholder" data-i18n="p1_placeholder">Industrial Projects</div>
           <div style="padding:24px;">
             <h3 data-i18n="p1_title">Industrial Projects</h3>
             <p data-i18n="p1_text">Pipeline systems, fabrication and industrial coordination in demanding environments.</p>
@@ -682,19 +690,30 @@
         </div>
 
         <div class="card" style="padding:0; overflow:hidden;">
-          <div class="placeholder">Arctic Steel Atmosphere</div>
+          <div class="placeholder" data-i18n="p2_placeholder">Quality • HSE • Environment</div>
           <div style="padding:24px;">
-            <h3 data-i18n="p2_title">Arctic Steel Atmosphere</h3>
-            <p data-i18n="p2_text">Nordic identity combined with precision engineering and offshore professionalism.</p>
+            <h3 data-i18n="p2_title">Quality, HSE & Environmental Standards</h3>
+            <p data-i18n="p2_text">Focus on safe work execution, quality control, documentation discipline and respect for the environment.</p>
           </div>
         </div>
 
         <div class="card" style="padding:0; overflow:hidden;">
-          <div class="placeholder">Offshore Operations</div>
+          <div class="placeholder" data-i18n="p3_placeholder">Onshore & Offshore</div>
           <div style="padding:24px;">
-            <h3 data-i18n="p3_title">Offshore & Heavy Industry Support</h3>
-            <p data-i18n="p3_text">Offshore installations, refinery infrastructure, industrial supervision and demanding projects across Northern Europe.</p>
+            <h3 data-i18n="p3_title">Onshore & Offshore Operations</h3>
+            <p data-i18n="p3_text">Technical support for industrial installations, refinery infrastructure, fabrication sites and offshore-related projects.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-band arctic-nature">
+      <div class="band-content">
+        <div class="band-card">
+          <h2 data-i18n="nature_title">Northern identity. Industrial discipline.</h2>
+          <p data-i18n="nature_text">
+            The Arctic is more than a location. It represents resilience, precision, responsibility and respect for demanding conditions.
+          </p>
         </div>
       </div>
     </section>
@@ -740,6 +759,8 @@
         btn_contact: "Contact us",
         btn_services: "View services",
         competence_title: "Core Competencies",
+        winter_refinery_title: "Industrial capability in harsh northern conditions",
+        winter_refinery_text: "Arctic weather, demanding access, strict safety requirements and complex industrial environments require discipline, planning and experienced technical supervision.",
         services_title: "Services",
         services_lead: "I support industrial companies in organizing, supervising and executing technical work on offshore, onshore, shipyard and installation projects.",
         s1_title: "Pipeline prefabrication",
@@ -761,12 +782,17 @@
         stat3: "safe work organization",
         projects_title: "Selected Projects & Industrial Environment",
         projects_lead: "Experience from demanding projects in offshore, refinery and industrial environments. Focus on safety, coordination, quality and efficient execution.",
+        p1_placeholder: "Industrial Projects",
         p1_title: "Industrial Projects",
         p1_text: "Pipeline systems, fabrication and industrial coordination in demanding environments.",
-        p2_title: "Arctic Steel Atmosphere",
-        p2_text: "Nordic identity combined with precision engineering and offshore professionalism.",
-        p3_title: "Offshore & Heavy Industry Support",
-        p3_text: "Offshore installations, refinery infrastructure, industrial supervision and demanding projects across Northern Europe.",
+        p2_placeholder: "Quality • HSE • Environment",
+        p2_title: "Quality, HSE & Environmental Standards",
+        p2_text: "Focus on safe work execution, quality control, documentation discipline and respect for the environment.",
+        p3_placeholder: "Onshore & Offshore",
+        p3_title: "Onshore & Offshore Operations",
+        p3_text: "Technical support for industrial installations, refinery infrastructure, fabrication sites and offshore-related projects.",
+        nature_title: "Northern identity. Industrial discipline.",
+        nature_text: "The Arctic is more than a location. It represents resilience, precision, responsibility and respect for demanding conditions.",
         contact_title: "Contact",
         contact_text: "Looking for an experienced prefabrication manager, coordinator, supervisor or technical consultant for an industrial project? Send a message or call.",
         location_label: "Location:",
@@ -784,6 +810,8 @@
         btn_contact: "Skontaktuj się",
         btn_services: "Zobacz usługi",
         competence_title: "Zakres kompetencji",
+        winter_refinery_title: "Możliwości przemysłowe w surowych północnych warunkach",
+        winter_refinery_text: "Arktyczna pogoda, trudny dostęp, wysokie wymagania BHP i złożone środowiska przemysłowe wymagają dyscypliny, planowania i doświadczonego nadzoru technicznego.",
         services_title: "Usługi",
         services_lead: "Pomagam firmom przemysłowym w organizacji, kontroli i realizacji prac technicznych na projektach offshore, onshore, stoczniowych i instalacyjnych.",
         s1_title: "Prefabrykacja rurociągów",
@@ -805,12 +833,17 @@
         stat3: "bezpieczna organizacja pracy",
         projects_title: "Wybrane projekty i środowisko przemysłowe",
         projects_lead: "Doświadczenie z wymagających projektów offshore, rafineryjnych i przemysłowych. Nacisk na bezpieczeństwo, koordynację, jakość i skuteczną realizację.",
-        p1_title: "Projekty przemysłowe",
+        p1_placeholder: "Industrial Projects",
+        p1_title: "Industrial Projects",
         p1_text: "Systemy rurociągowe, prefabrykacja i koordynacja przemysłowa w wymagających środowiskach.",
-        p2_title: "Arctic Steel Atmosphere",
-        p2_text: "Nordycka tożsamość połączona z precyzją inżynieryjną i profesjonalizmem offshore.",
-        p3_title: "Offshore i przemysł ciężki",
-        p3_text: "Instalacje offshore, infrastruktura rafineryjna, nadzór przemysłowy i wymagające projekty w Europie Północnej.",
+        p2_placeholder: "Quality • HSE • Environment",
+        p2_title: "Jakość, BHP i standardy środowiskowe",
+        p2_text: "Nacisk na bezpieczne wykonanie prac, kontrolę jakości, dyscyplinę dokumentacyjną i odpowiedzialne podejście do środowiska.",
+        p3_placeholder: "Onshore & Offshore",
+        p3_title: "Operacje onshore i offshore",
+        p3_text: "Wsparcie techniczne dla instalacji przemysłowych, infrastruktury rafineryjnej, prefabrykacji i projektów powiązanych z offshore.",
+        nature_title: "Północna tożsamość. Przemysłowa dyscyplina.",
+        nature_text: "Arktyka to więcej niż lokalizacja. To odporność, precyzja, odpowiedzialność i szacunek do wymagających warunków.",
         contact_title: "Kontakt",
         contact_text: "Szukasz doświadczonego managera prefabrykacji, koordynatora, supervisora lub konsultanta technicznego do projektu przemysłowego? Napisz lub zadzwoń.",
         location_label: "Lokalizacja:",
@@ -828,6 +861,8 @@
         btn_contact: "Kontakt oss",
         btn_services: "Se tjenester",
         competence_title: "Kjernekompetanse",
+        winter_refinery_title: "Industriell kapasitet under krevende nordlige forhold",
+        winter_refinery_text: "Arktisk vær, krevende adkomst, strenge HMS-krav og komplekse industrimiljøer krever disiplin, planlegging og erfaren teknisk oppfølging.",
         services_title: "Tjenester",
         services_lead: "Jeg støtter industriselskaper med organisering, oppfølging og gjennomføring av teknisk arbeid på offshore-, onshore-, verfts- og installasjonsprosjekter.",
         s1_title: "Prefabrikasjon av rør",
@@ -849,18 +884,27 @@
         stat3: "sikker organisering av arbeid",
         projects_title: "Utvalgte prosjekter og industrimiljø",
         projects_lead: "Erfaring fra krevende prosjekter innen offshore, raffineri og industri. Fokus på sikkerhet, koordinering, kvalitet og effektiv gjennomføring.",
-        p1_title: "Industriprosjekter",
+        p1_placeholder: "Industrial Projects",
+        p1_title: "Industrial Projects",
         p1_text: "Rørsystemer, prefabrikasjon og industriell koordinering i krevende miljøer.",
-        p2_title: "Arctic Steel Atmosphere",
-        p2_text: "Nordisk identitet kombinert med presis ingeniørkompetanse og offshore-profesjonalitet.",
-        p3_title: "Offshore og tungindustri",
-        p3_text: "Offshoreinstallasjoner, raffineriinfrastruktur, industriell oppfølging og krevende prosjekter i Nord-Europa.",
+        p2_placeholder: "Quality • HSE • Environment",
+        p2_title: "Kvalitet, HMS og miljøstandarder",
+        p2_text: "Fokus på sikkert arbeid, kvalitetskontroll, dokumentasjonsdisiplin og ansvarlig miljøhensyn.",
+        p3_placeholder: "Onshore & Offshore",
+        p3_title: "Onshore- og offshoreoperasjoner",
+        p3_text: "Teknisk støtte for industrianlegg, raffineriinfrastruktur, prefabrikasjon og offshore-relaterte prosjekter.",
+        nature_title: "Nordlig identitet. Industriell disiplin.",
+        nature_text: "Arktis er mer enn en lokasjon. Det representerer robusthet, presisjon, ansvar og respekt for krevende forhold.",
         contact_title: "Kontakt",
         contact_text: "Trenger du en erfaren prefabrikasjonsleder, koordinator, supervisor eller teknisk konsulent til et industriprosjekt? Send en melding eller ring.",
         location_label: "Lokasjon:",
         location_text: "Norge / EU / prosjekter i Armenia"
       }
     };
+
+    function toggleLangMenu() {
+      document.getElementById("languageDropdown").classList.toggle("open");
+    }
 
     function setLang(lang) {
       document.documentElement.lang = lang === "no" ? "no" : lang;
@@ -877,8 +921,17 @@
         if (btn) btn.classList.toggle("active", code === lang);
       });
 
+      document.getElementById("currentLangLabel").textContent = lang.toUpperCase();
+      document.getElementById("languageDropdown").classList.remove("open");
       localStorage.setItem("siteLang", lang);
     }
+
+    document.addEventListener("click", function(event) {
+      const dropdown = document.getElementById("languageDropdown");
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove("open");
+      }
+    });
 
     setLang(localStorage.getItem("siteLang") || "en");
   </script>
