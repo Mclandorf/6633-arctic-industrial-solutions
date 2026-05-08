@@ -141,9 +141,9 @@
       padding-top:76px;
       overflow:hidden;
       background:
-        linear-gradient(90deg, rgba(3,9,22,.10) 0%, rgba(3,9,22,.02) 48%, rgba(3,9,22,.08) 100%),
-        linear-gradient(180deg, rgba(3,9,22,.02) 0%, rgba(3,9,22,.06) 48%, rgba(3,9,22,.48) 100%),
-        url("hero-refinery.png") center center / cover no-repeat;
+        linear-gradient(90deg, rgba(3,9,22,.18) 0%, rgba(3,9,22,.06) 48%, rgba(3,9,22,.12) 100%),
+        linear-gradient(180deg, rgba(3,9,22,.05) 0%, rgba(3,9,22,.10) 48%, rgba(3,9,22,.70) 100%),
+        url("hero-refinery-new.png") center center / cover no-repeat;
     }
 
     .hero-inner {
@@ -253,9 +253,9 @@
       justify-self:end;
       margin-bottom:34px;
       width:min(100%,520px);
-      background: transparent;
+      background: rgba(8,22,45,0.00);
       backdrop-filter: none;
-      border: 1px solid rgba(255,255,255,0.38);
+      border: 1px solid rgba(255,255,255,0.32);
       border-radius:28px;
       padding:34px;
       box-shadow:none;
@@ -303,9 +303,9 @@
 
     .image-band.winter-refinery {
       background:
-        linear-gradient(90deg, rgba(3,9,22,.14), rgba(3,9,22,.02), rgba(3,9,22,.18)),
-        linear-gradient(180deg, rgba(3,9,22,.00), rgba(3,9,22,.28)),
-        url("winter-refinery.png") center center / cover no-repeat;
+        linear-gradient(90deg, rgba(3,9,22,.28), rgba(3,9,22,.06), rgba(3,9,22,.34)),
+        linear-gradient(180deg, rgba(3,9,22,.02), rgba(3,9,22,.48)),
+        url("winter-refinery-bright.png") center center / cover no-repeat;
     }
 
     .image-band.arctic-nature {
@@ -379,9 +379,9 @@
 
     .band-card {
       max-width:720px;
-      background: transparent;
+      background: rgba(8,22,45,0.00);
       backdrop-filter: none;
-      border: 1px solid rgba(255,255,255,0.38);
+      border: 1px solid rgba(255,255,255,0.32);
       border-radius:28px;
       padding:34px;
       box-shadow:none;
@@ -517,6 +517,126 @@
       text-shadow: 0 4px 16px rgba(0,0,0,0.95);
     }
 
+
+    .project-card {
+      position: relative;
+      min-height: 430px;
+      padding: 0;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.20);
+      background: rgba(8,22,45,0.22);
+      box-shadow: 0 18px 44px rgba(0,0,0,0.24);
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: scale(1.02);
+      transition: transform .45s ease, filter .45s ease;
+      filter: saturate(1.08) contrast(1.04);
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(3,9,22,0.10) 0%, rgba(3,9,22,0.56) 48%, rgba(3,9,22,0.88) 100%),
+        linear-gradient(90deg, rgba(3,9,22,0.38), rgba(3,9,22,0.12));
+      z-index: 1;
+    }
+
+    .project-card:hover::before {
+      transform: scale(1.07);
+      filter: saturate(1.16) contrast(1.08) brightness(1.08);
+    }
+
+    .project-card.industrial::before {
+      background-image: url("hero-refinery.png");
+    }
+
+    .project-card.quality::before {
+      background-image: url("winter-refinery.png");
+    }
+
+    .project-card.onshore::before {
+      background-image: url("arctic-winter.png");
+    }
+
+    .project-card-content {
+      position: relative;
+      z-index: 2;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 34px;
+    }
+
+    .project-icon {
+      width: 58px;
+      height: 58px;
+      margin-bottom: 22px;
+      color: var(--gold);
+    }
+
+    .project-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .project-card h3 {
+      color: var(--white);
+      font-size: 28px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.90);
+    }
+
+    .project-line {
+      width: 64px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 99px;
+      margin-bottom: 24px;
+    }
+
+    .project-card p {
+      color: #e6edf8;
+      font-size: 17px;
+      line-height: 1.65;
+      max-width: 390px;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.90);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 26px;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 17px;
+    }
+
+    .project-link span {
+      transition: transform .2s ease;
+    }
+
+    .project-card:hover .project-link span {
+      transform: translateX(4px);
+    }
+
     footer {
       border-top:1px solid var(--line);
       padding:30px 0;
@@ -594,6 +714,20 @@
       }
       .image-band { min-height:78vh; }
       .band-card { padding:26px; }
+
+      .project-card,
+      .project-card-content {
+        min-height: 360px;
+      }
+
+      .project-card-content {
+        padding: 26px;
+      }
+
+      .project-card h3 {
+        font-size: 24px;
+      }
+
     }
   </style>
 </head>
@@ -760,27 +894,55 @@
       </p>
 
       <div class="grid">
-        <div class="card" style="padding:0; overflow:hidden;">
-          <div class="placeholder" data-i18n="p1_placeholder">Industrial Projects</div>
-          <div style="padding:24px;">
+        <div class="project-card industrial">
+          <div class="project-card-content">
+            <div class="project-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M8 52h48" />
+                <path d="M12 52V30l10 7V30l10 7V22h8v30" />
+                <path d="M44 52V18h8v34" />
+                <path d="M18 52V42h8v10" />
+                <path d="M34 52V42h8v10" />
+              </svg>
+            </div>
             <h3 data-i18n="p1_title">Industrial Projects</h3>
+            <div class="project-line"></div>
             <p data-i18n="p1_text">Pipeline systems, fabrication and industrial coordination in demanding environments.</p>
+            <a class="project-link" href="#contact" data-i18n="read_more">Read more <span>›</span></a>
           </div>
         </div>
 
-        <div class="card" style="padding:0; overflow:hidden;">
-          <div class="placeholder" data-i18n="p2_placeholder">Quality • HSE • Environment</div>
-          <div style="padding:24px;">
+        <div class="project-card quality">
+          <div class="project-card-content">
+            <div class="project-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M32 6l20 8v15c0 13-8 23-20 29C20 52 12 42 12 29V14l20-8z" />
+                <path d="M23 32l6 6 13-15" />
+              </svg>
+            </div>
             <h3 data-i18n="p2_title">Quality, HSE & Environmental Standards</h3>
+            <div class="project-line"></div>
             <p data-i18n="p2_text">Focus on safe work execution, quality control, documentation discipline and respect for the environment.</p>
+            <a class="project-link" href="#contact" data-i18n="read_more">Read more <span>›</span></a>
           </div>
         </div>
 
-        <div class="card" style="padding:0; overflow:hidden;">
-          <div class="placeholder" data-i18n="p3_placeholder">Onshore & Offshore</div>
-          <div style="padding:24px;">
+        <div class="project-card onshore">
+          <div class="project-card-content">
+            <div class="project-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M10 48c7-5 13-5 20 0s13 5 24 0" />
+                <path d="M16 44V28h8v16" />
+                <path d="M40 44V24h8v20" />
+                <path d="M24 32h16" />
+                <path d="M20 24l4-8 4 8" />
+                <path d="M42 20l4-8 4 8" />
+              </svg>
+            </div>
             <h3 data-i18n="p3_title">Onshore & Offshore Operations</h3>
+            <div class="project-line"></div>
             <p data-i18n="p3_text">Technical support for industrial installations, refinery infrastructure, fabrication sites and offshore-related projects.</p>
+            <a class="project-link" href="#contact" data-i18n="read_more">Read more <span>›</span></a>
           </div>
         </div>
       </div>
@@ -860,6 +1022,7 @@
         p3_text: "Technical support for industrial installations, refinery infrastructure, fabrication sites and offshore-related projects.",
         nature_title: "Northern identity. Industrial discipline.",
         nature_text: "The Arctic is more than a location. It represents resilience, precision, responsibility and respect for demanding conditions.",
+        read_more: "Read more <span>›</span>",
         contact_title: "Contact",
         contact_text: "Looking for an experienced prefabrication manager, coordinator, supervisor or technical consultant for an industrial project? Send a message or call.",
         location_label: "Location:",
@@ -911,6 +1074,8 @@
         p3_text: "Wsparcie techniczne dla instalacji przemysłowych, infrastruktury rafineryjnej, prefabrykacji i projektów powiązanych z offshore.",
         nature_title: "Północna tożsamość. Przemysłowa dyscyplina.",
         nature_text: "Arktyka to więcej niż lokalizacja. To odporność, precyzja, odpowiedzialność i szacunek do wymagających warunków.",
+        read_more: "Czytaj więcej <span>›</span>",
+        read_more: "Les mer <span>›</span>",
         contact_title: "Kontakt",
         contact_text: "Szukasz doświadczonego managera prefabrykacji, koordynatora, supervisora lub konsultanta technicznego do projektu przemysłowego? Napisz lub zadzwoń.",
         location_label: "Lokalizacja:",
