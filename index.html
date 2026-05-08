@@ -310,9 +310,23 @@
 
     .image-band.arctic-nature {
       background:
-        linear-gradient(90deg, rgba(3,9,22,.42), rgba(3,9,22,.08), rgba(3,9,22,.32)),
-        linear-gradient(180deg, rgba(3,9,22,.02), rgba(3,9,22,.70)),
-        url("arctic-winter.png") center center / cover no-repeat;
+        linear-gradient(90deg, rgba(3,9,22,.18), rgba(3,9,22,.02), rgba(3,9,22,.18)),
+        linear-gradient(180deg, rgba(3,9,22,.00), rgba(3,9,22,.42)),
+        url("arctic-winter.png") center top / cover no-repeat;
+    }
+
+    .image-band.nature-clean {
+      min-height: 82vh;
+      align-items: stretch;
+      margin-top: 0;
+    }
+
+    .image-band.nature-clean::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(3,9,22,0.00), rgba(3,9,22,0.18) 55%, rgba(3,9,22,0.60));
+      pointer-events: none;
     }
 
     .band-content {
@@ -603,6 +617,8 @@
       </div>
     </section>
 
+    <section class="image-band arctic-nature nature-clean" aria-label="Arctic winter landscape"></section>
+
     <section id="services" class="container">
       <h2 class="section-title" data-i18n="services_title">Services</h2>
       <p class="section-lead" data-i18n="services_lead">
@@ -706,19 +722,7 @@
         </div>
       </div>
     </section>
-
-    <section class="image-band arctic-nature">
-      <div class="band-content">
-        <div class="band-card">
-          <h2 data-i18n="nature_title">Northern identity. Industrial discipline.</h2>
-          <p data-i18n="nature_text">
-            The Arctic is more than a location. It represents resilience, precision, responsibility and respect for demanding conditions.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="container">
+<section id="contact" class="container">
       <div class="contact-box">
         <div>
           <h2 class="section-title" data-i18n="contact_title">Contact</h2>
