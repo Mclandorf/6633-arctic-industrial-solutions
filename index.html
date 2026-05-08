@@ -253,21 +253,27 @@
       justify-self:end;
       margin-bottom:34px;
       width:min(100%,520px);
-      background: rgba(8,22,45,0.00);
-      backdrop-filter: none;
-      border: 1px solid rgba(255,255,255,0.32);
+      background: rgba(3, 9, 22, 0.34);
+      backdrop-filter: blur(3px);
+      border: 1px solid rgba(255,255,255,0.42);
       border-radius:28px;
       padding:34px;
-      box-shadow:none;
+      box-shadow: 0 16px 46px rgba(0,0,0,0.24);
     }
 
     .competence-card h3 {
       color:var(--gold);
       font-size:28px;
       margin-bottom:22px;
+      position: relative;
+      z-index: 2;
     }
 
-    .competence-card ul { list-style:none; }
+    .competence-card ul {
+      list-style:none;
+      position: relative;
+      z-index: 2;
+    }
     .competence-card li {
       padding:14px 0;
       border-bottom:1px solid rgba(255,255,255,.13);
@@ -635,6 +641,30 @@
 
     .project-card:hover .project-link span {
       transform: translateX(4px);
+    }
+
+
+    .competence-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      background:
+        linear-gradient(90deg, rgba(3,9,22,0.34), rgba(3,9,22,0.16)),
+        linear-gradient(180deg, rgba(3,9,22,0.14), rgba(3,9,22,0.30));
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .competence-card h3 {
+      text-shadow: 0 4px 16px rgba(0,0,0,0.95), 0 0 12px rgba(244,180,26,0.24);
+    }
+
+    .competence-card li {
+      color: #ffffff;
+      font-weight: 700;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.98), 0 1px 2px rgba(0,0,0,0.95);
+      border-bottom: 1px solid rgba(255,255,255,0.22);
     }
 
     footer {
