@@ -276,7 +276,7 @@
     }
     .competence-card li:last-child { border-bottom:none; }
 
-    section { padding:90px 0; }
+    section { padding:70px 0; }
 
     .section-title {
       font-size:clamp(36px,4vw,54px);
@@ -316,8 +316,8 @@
     }
 
     .image-band.nature-clean {
-      min-height: 100vh;
-      align-items: center;
+      min-height: 82vh;
+      align-items: stretch;
       margin-top: 0;
     }
 
@@ -329,20 +329,42 @@
       pointer-events: none;
     }
 
-    .nature-contact {
-      position: relative;
-      z-index: 3;
-      display: flex;
-      align-items: center;
+
+    .services-on-nature {
       min-height: 100vh;
-      padding: 90px 0;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(3,9,22,.58), rgba(3,9,22,.24), rgba(3,9,22,.58)),
+        linear-gradient(180deg, rgba(3,9,22,.08), rgba(3,9,22,.72)),
+        url("arctic-winter.png") center top / cover no-repeat;
     }
 
-    .nature-contact .contact-box {
-      width: min(100%, 980px);
-      margin-left: auto;
-      background: rgba(8, 22, 45, 0.76);
-      backdrop-filter: blur(14px);
+    .services-overlay {
+      position: relative;
+      z-index: 3;
+      padding: 92px 0;
+    }
+
+    .services-overlay .section-title,
+    .services-overlay .section-lead {
+      text-shadow: 0 8px 28px rgba(0,0,0,.85);
+    }
+
+    .services-overlay .grid.two {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1380px;
+      gap: 18px;
+    }
+
+    .services-overlay .card {
+      background: rgba(8,22,45,.78);
+      backdrop-filter: blur(12px);
+    }
+
+
+    .image-band {
+      padding: 0;
     }
 
     .band-content {
@@ -382,8 +404,8 @@
     }
 
     .grid.two {
-      grid-template-columns:repeat(2,1fr);
-      max-width:900px;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1380px;
     }
 
     .card {
@@ -524,7 +546,8 @@
         grid-template-columns:1fr;
       }
 
-      .grid.two {
+      .grid.two,
+      .services-overlay .grid.two {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -548,22 +571,17 @@
       .competence-card { padding:24px; }
       .competence-card li { font-size:16px; }
       section { padding:62px 0; }
-      .image-band { min-height:78vh; }
-      .band-card { padding:26px; }
 
-      .grid.two {
+      .grid.two,
+      .services-overlay .grid.two {
         grid-template-columns: 1fr;
       }
 
-      .nature-contact {
-        min-height: 100vh;
+      .services-overlay {
         padding: 70px 0;
-        align-items: center;
       }
-
-      .nature-contact .contact-box {
-        margin-left: 0;
-      }
+      .image-band { min-height:78vh; }
+      .band-card { padding:26px; }
     }
   </style>
 </head>
@@ -650,32 +668,9 @@
       </div>
     </section>
 
-    <section id="contact" class="image-band arctic-nature nature-clean" aria-label="Arctic winter landscape">
-      <div class="container nature-contact">
-        <div class="contact-box">
-        <div>
-          <h2 class="section-title" data-i18n="contact_title">Contact</h2>
-          <p class="section-lead" data-i18n="contact_text">
-            Looking for an experienced prefabrication manager, coordinator, supervisor or technical consultant for an industrial project? Send a message or call.
-          </p>
-        </div>
-
-        <div>
-          <ul class="contact-list">
-            <li><strong>Email:</strong> <a href="mailto:contact@6633ais.com">contact@6633ais.com</a></li>
-            <li><strong>Office:</strong> <a href="mailto:office@6633ais.com">office@6633ais.com</a></li>
-            <li><strong>Direct:</strong> <a href="mailto:szymon.stepinski@6633ais.com">szymon.stepinski@6633ais.com</a></li>
-            <li><strong>Norway:</strong> <a href="tel:+4740198695">+47 401 98 695</a></li>
-            <li><strong>Poland:</strong> <a href="tel:+48531161258">+48 531 161 258</a></li>
-            <li><strong data-i18n="location_label">Location:</strong> <span data-i18n="location_text">Norway / EU / Armenia projects</span></li>
-          </ul>
-        </div>
-      </div>
-      </div>
-    </section>
-
-    <section id="services" class="container">
-      <h2 class="section-title" data-i18n="services_title">Services</h2>
+    <section id="services" class="image-band arctic-nature services-on-nature" aria-label="Arctic winter landscape with services">
+      <div class="container services-overlay">
+        <h2 class="section-title" data-i18n="services_title">Services</h2>
       <p class="section-lead" data-i18n="services_lead">
         I support industrial companies in organizing, supervising and executing technical work on offshore, onshore, shipyard and installation projects.
       </p>
@@ -711,9 +706,10 @@
           <p data-i18n="s6_text">Supervision of steel structure installation, coordination of work and technical support for industrial projects.</p>
         </div>
       </div>
+      </div>
     </section>
 
-    <section id="about" class="container about">
+<section id="about" class="container about">
       <div>
         <h2 class="section-title" data-i18n="about_title">About the company</h2>
         <p class="section-lead" data-i18n="about_text">
@@ -777,7 +773,28 @@
         </div>
       </div>
     </section>
-</main>
+<section id="contact" class="container">
+      <div class="contact-box">
+        <div>
+          <h2 class="section-title" data-i18n="contact_title">Contact</h2>
+          <p class="section-lead" data-i18n="contact_text">
+            Looking for an experienced prefabrication manager, coordinator, supervisor or technical consultant for an industrial project? Send a message or call.
+          </p>
+        </div>
+
+        <div>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:contact@6633ais.com">contact@6633ais.com</a></li>
+            <li><strong>Office:</strong> <a href="mailto:office@6633ais.com">office@6633ais.com</a></li>
+            <li><strong>Direct:</strong> <a href="mailto:szymon.stepinski@6633ais.com">szymon.stepinski@6633ais.com</a></li>
+            <li><strong>Norway:</strong> <a href="tel:+4740198695">+47 401 98 695</a></li>
+            <li><strong>Poland:</strong> <a href="tel:+48531161258">+48 531 161 258</a></li>
+            <li><strong data-i18n="location_label">Location:</strong> <span data-i18n="location_text">Norway / EU / Armenia projects</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">© 2026 66°33' Arctic Industrial Solutions. All rights reserved.</div>
